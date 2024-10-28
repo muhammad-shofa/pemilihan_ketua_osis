@@ -53,8 +53,7 @@ if (isset($_POST['logoutBtn'])) {
 <body>
     <div class="container-xl py-3 px-2 text-center">
         <?php include "navbar.php" ?>
-
-        <h2 class="mt-3">Pemilihan Ketua Osis SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
+        <h2 class="mt-3">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
         <div class="main-bar">
             <div class="kandidat1" id="barKandidat1">
                 <span class="kandidat-label label1" id="persentaseKandidat1"></span>
@@ -69,17 +68,17 @@ if (isset($_POST['logoutBtn'])) {
             <div class="card" style="width: 380px;">
                 <div class="card-body">
                     <h4><b id="jumlah_suara1"></b></h4>
-                    <h3 class="card-title">Andreas Al Andreas</h3>
+                    <h3 class="card-title">Shyallom Christian Yosua Putra <br> & <br> Cintya Putri Dzulfianendi</h3>
                 </div>
-                <img src="../assets/img/calon-1.jpg" class="card-img-top" alt="Calon 1">
+                <img src="../assets/img/calon-1.jpeg" class="card-img-top" alt="Calon 1">
             </div>
             <!-- kandidat 2 -->
             <div class="card" style="width: 380px;">
                 <div class="card-body">
                     <h4><b id="jumlah_suara2"></b></h4>
-                    <h3 class="card-title">Thomas Slebew</h3>
+                    <h3 class="card-title">Eka Yoansa <br> & <br> Ahmad Wahyu Anafi</h3>
                 </div>
-                <img src="../assets/img/calon-2.jpg" class="card-img-top" alt="Calon 2">
+                <img src="../assets/img/calon-2.jpeg" class="card-img-top" alt="Calon 2">
             </div>
         </div>
     </div>

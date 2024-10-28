@@ -28,38 +28,45 @@ if (isset($_POST['logoutBtn'])) {
 </head>
 
 <body>
-    <div class="container-xl py-3 px-2 text-center">
-        <?php include "navbar.php" ?>
+    <button id="fullscreenBtn" title="Fullscreen">
+        <i class="fas fa-expand"></i>
+    </button>
+    <div class="container-xl py-2 px-2 text-center">
+        <!-- <php include "navbar.php" ?> -->
 
-        <h2 class="mt-3">Pemilihan Ketua Osis SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
-        <div class="d-flex flex-wrap justify-content-evenly py-3">
+        <h2 class="">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
+        <div class="d-flex flex-wrap justify-content-evenly">
             <!-- kandidat 1 -->
-            <div class="card" style="width: 380px;">
-                <img src="../assets/img/calon-1.jpg" class="card-img-top" alt="Calon 1">
-                <div class="card-body">
-                    <h4 class="card-title">Andreas Al Andreas</h4>
-                    <h6>Kandidat Nomor 1</h6>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#modalKonfirmasi1">
-                        Pilih Kandidat
-                    </button>
+            <form action="" method="POST" id="kandidat1">
+                <div class="card card-orange" style="width: 380px;" id="ya1">
+                    <img src="../assets/img/calon-1-new.jpeg" class="card-img-top" alt="Calon 1">
+                    <div class="card-body">
+                        <input type="hidden" name="kandidat_id" value="1">
+                        <h4 class="card-title">Shyallom Christian Yosua Putra <br> & <br> Cintya Putri Dzulfianendi</h4>
+                        <h6>Paslon Nomor 1</h6>
+                        <button type="button" class="btn btn-success" name="btnPilih1dump">
+                            Pilih Paslon
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
             <!-- kandidat 2 -->
-            <div class="card" style="width: 380px;">
-                <img src="../assets/img/calon-2.jpg" class="card-img-top" alt="Calon 2">
-                <div class="card-body">
-                    <h4 class="card-title">Thomas Slebew</h4>
-                    <h6>Kandidat Nomor 2</h6>
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                        data-bs-target="#modalKonfirmasi2">
-                        Pilih Kandidat
-                    </button>
+            <form action="" method="POST" id="kandidat2">
+                <div class="card card-orange" style="width: 380px;" id="ya2">
+                    <img src="../assets/img/calon-2-new.jpeg" class="card-img-top" alt="Calon 2">
+                    <div class="card-body">
+                        <input type="hidden" name="kandidat_id" value="2">
+                        <h4 class="card-title">Eka Yoansa <br> & <br> Ahmad Wahyu Anafi</h4>
+                        <h6>Paslon Nomor 2</h6>
+                        <button type="button" class="btn btn-success" name="btnPilih2dump">
+                            Pilih Paslon
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </form>
 
             <!-- Modal Konfirmasi 1 Start -->
-            <div class="modal fade" id="modalKonfirmasi1" tabindex="-1" aria-hidden="true">
+            <!-- <div class="modal fade" id="modalKonfirmasi1" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form action="" id="formKonfirmasi1">
@@ -79,11 +86,11 @@ if (isset($_POST['logoutBtn'])) {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Modal Konfirmasi 1 End -->
 
             <!-- Modal Konfirmasi 2 Start -->
-            <div class="modal fade" id="modalKonfirmasi2" tabindex="-1" aria-hidden="true">
+            <!-- <div class="modal fade" id="modalKonfirmasi2" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form action="" id="formKonfirmasi2">
@@ -103,7 +110,7 @@ if (isset($_POST['logoutBtn'])) {
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Modal Konfirmasi 2 End -->
 
             <!-- Modal countdown -->
@@ -146,9 +153,8 @@ if (isset($_POST['logoutBtn'])) {
 
     <script>
         // Insert Pilihan Kandidat 1
-        // Insert Pilihan Kandidat 2
         $('#ya1').click(function () {
-            $('#modalKonfirmasi1').modal('hide');
+            // $('#modalKonfirmasi1').modal('hide');
             $('#modalCountdown').modal('show');
 
             // Hitungan mundur dari 10 detik
@@ -160,7 +166,7 @@ if (isset($_POST['logoutBtn'])) {
                 if (countdown < 0) {
                     clearInterval(countdownInterval); // Hentikan interval saat countdown selesai
                     // Kirim data ke server setelah countdown selesai
-                    var data = $('#formKonfirmasi1').serialize();
+                    var data = $('#kandidat1').serialize();
                     $.ajax({
                         url: '../service/ajax-pemilihan.php',
                         type: 'POST',
@@ -184,7 +190,7 @@ if (isset($_POST['logoutBtn'])) {
 
         // Insert Pilihan Kandidat 2
         $('#ya2').click(function () {
-            $('#modalKonfirmasi2').modal('hide');
+            // $('#modalKonfirmasi2').modal('hide');
             $('#modalCountdown').modal('show');
 
             // Hitungan mundur dari 10 detik
@@ -196,7 +202,7 @@ if (isset($_POST['logoutBtn'])) {
                 if (countdown < 0) {
                     clearInterval(countdownInterval); // Hentikan interval saat countdown selesai
                     // Kirim data ke server setelah countdown selesai
-                    var data = $('#formKonfirmasi2').serialize();
+                    var data = $('#kandidat2').serialize();
                     $.ajax({
                         url: '../service/ajax-pemilihan.php',
                         type: 'POST',
@@ -218,7 +224,7 @@ if (isset($_POST['logoutBtn'])) {
 
         // FS
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const logoutBtn = document.getElementById('logoutBtn');
+        // const logoutBtn = document.getElementById('logoutBtn');
 
         // Fungsi untuk masuk/keluar mode fullscreen
         function toggleFullscreen() {
@@ -237,22 +243,22 @@ if (isset($_POST['logoutBtn'])) {
         fullscreenBtn.addEventListener('click', toggleFullscreen);
 
         // Fungsi untuk mengupdate visibilitas logout button
-        function updateLogoutButtonVisibility() {
-            if (document.fullscreenElement) {
-                logoutBtn.style.display = 'none'; // Sembunyikan tombol logout
-            } else {
-                logoutBtn.style.display = 'block'; // Tampilkan tombol logout
-            }
-        }
+        // function updateLogoutButtonVisibility() {
+        //     if (document.fullscreenElement) {
+        //         logoutBtn.style.display = 'none'; // Sembunyikan tombol logout
+        //     } else {
+        //         logoutBtn.style.display = 'block'; // Tampilkan tombol logout
+        //     }
+        // }
 
-        // Perubahan status fullscreen
-        document.addEventListener('fullscreenchange', updateLogoutButtonVisibility);
-        document.addEventListener('webkitfullscreenchange', updateLogoutButtonVisibility); // Untuk Safari
-        document.addEventListener('mozfullscreenchange', updateLogoutButtonVisibility); // Untuk Firefox
-        document.addEventListener('MSFullscreenChange', updateLogoutButtonVisibility); // Untuk IE/Edge
+        // // Perubahan status fullscreen
+        // document.addEventListener('fullscreenchange', updateLogoutButtonVisibility);
+        // document.addEventListener('webkitfullscreenchange', updateLogoutButtonVisibility); // Untuk Safari
+        // document.addEventListener('mozfullscreenchange', updateLogoutButtonVisibility); // Untuk Firefox
+        // document.addEventListener('MSFullscreenChange', updateLogoutButtonVisibility); // Untuk IE/Edge
 
-        // Tampilankan tombol logout saat halaman dimuat
-        updateLogoutButtonVisibility();
+        // // Tampilankan tombol logout saat halaman dimuat
+        // updateLogoutButtonVisibility();
 
     </script>
 </body>

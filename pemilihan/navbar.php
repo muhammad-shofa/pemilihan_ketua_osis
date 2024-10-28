@@ -10,11 +10,11 @@
 
             </ul>
             <span class="navbar-text d-flex">
-                <form action="" method="POST">
+                <!-- <form action="" method="POST">
                     <button id="logoutBtn" name="logoutBtn" title="Logout">
                         <i class="fas fa-sign-out-alt"></i>
                     </button>
-                </form>
+                </form> -->
                 <button id="fullscreenBtn" title="Fullscreen">
                     <i class="fas fa-expand"></i>
                 </button>
