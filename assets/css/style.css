@@ -1,15 +1,157 @@
-/* nav {
-  background-color: salmon;
-} */
-.custom-orange {
-  background-color: orange !important;
-  color: #ffffff !important;
+body {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../img/bg-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.judul {
+  width: max-content;
+  height: max-content;
+  background-color: #d9bd69;
+  padding: 5px 20px;
+  transform: skew(-10deg);
+  display: inline-block;
+  box-shadow: 7px 7px 0px 0px rgba(255, 255, 255, 0.3);
+}
+
+.judul-2 {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  background-color: #d9bd69;
+  margin-top: -80px;
+  padding: 5px 20px;
+  display: inline-block;
+  z-index: 1;
+}
+
+/* Pseudo-element sebelum untuk efek miring ke kanan */
+.judul-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transform: skew(10deg);
+  box-shadow: 7px 7px 0px 0px rgba(255, 255, 255, 1);
+  z-index: -1;
+}
+
+/* Pseudo-element setelah untuk efek miring ke kiri */
+.judul-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  transform: skew(-10deg);
+  box-shadow: 7px 7px 0px 0px rgba(255, 255, 255, 1);
+  z-index: -1;
+}
+
+.toga {
+  width: 120px;
+  position: fixed;
+  left: 50px;
+  top: 80px;
+  animation: slide-diagonal-alternate-2 4s ease-in-out infinite alternate;
+}
+.book {
+  width: 130px;
+  position: fixed;
+  right: 50px;
+  top: 280px;
+  animation: slide-diagonal-alternate 3s ease-in-out infinite alternate;
 }
 
 .card-orange {
-  background-color: orange !important;
+  background-color: #d9bd69 !important;
   color: #ffffff !important;
   cursor: pointer;
+}
+
+.card {
+  box-shadow: 10px 12px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 12px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 12px 0px 0px rgba(0, 0, 0, 0.75);
+  margin-top: 15px;
+}
+
+.ani1 {
+  animation: naikTurun 5s ease-in-out infinite;
+}
+.ani2 {
+  animation: naikTurun 6s ease-in-out infinite;
+}
+
+@keyframes naikTurun {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes slide-diagonal-alternate {
+  from {
+    transform: translate(-20px, 20px) skew(-10deg);
+  }
+  to {
+    transform: translate(0, 0) skew(-10deg);
+  }
+}
+
+@keyframes slide-diagonal-alternate-2 {
+  from {
+    transform: translate(20px, -20px) skew(-10deg);
+  }
+  to {
+    transform: translate(0, 0) skew(-10deg);
+  }
+}
+
+.card .card-body .ketua {
+  color: #1a1a1a;
+}
+.card .card-body .wakil {
+  color: #1a1a1a;
+}
+.card .card-body .nomor {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+.card .card-body .btn-custom {
+  background-color: #1a1a1a;
+  color: #efebec;
+}
+
+.card:active {
+  box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 6px 0px 0px rgba(0, 0, 0, 0.75);
 }
 
 .main-bar {
@@ -64,10 +206,10 @@
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #000000;
+  color: #b2b2b2;
 }
 
-#logoutBtn {
+/* #logoutBtn {
   padding: 4px 8px 4px 8px;
   margin-right: 10px;
   background-color: #de0000;
@@ -76,4 +218,4 @@
   cursor: pointer;
   font-size: 20px;
   color: #ffffff;
-}
+} */

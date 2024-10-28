@@ -25,7 +25,6 @@ if ($result) {
     $data = $result->fetch_assoc();
     $total_votes = $data['total_votes'];
 
-    // Jumlah total target (misal, 1000 siswa)
     $target_votes = 1714;
 
     // Hitung persentase suara yang terkumpul
@@ -53,9 +52,12 @@ if ($result) {
 </head>
 
 <body>
+    <button id="fullscreenBtn" title="Fullscreen">
+        <i class="fas fa-expand"></i>
+    </button>
     <div class="container-xl py-3 px-2 text-center">
-        <?php include "navbar.php" ?>
-        <h2 class="mt-3">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
+        <!-- <php include "navbar.php" ?> -->
+        <h2 class="mt-3 judul">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
         <div class="main-bar">
             <div class="kandidat1" id="barKandidat1">
                 <span class="kandidat-label label1" id="persentaseKandidat1"></span>
@@ -64,27 +66,31 @@ if ($result) {
                 <span class="kandidat-label label2" id="persentaseKandidat2"></span>
             </div>
         </div>
-        <div class="jumlah-semua-suara p-2 text-center">
+        <div class="jumlah-semua-suara p-2 text-center judul-2">
             <?= $value_semua_votes ?>
             <?= $value_persentase_votes ?>
         </div>
 
         <div class="d-flex flex-wrap justify-content-evenly py-3">
-            <!-- kandidat 1 -->
-            <div class="card" style="width: 380px;">
+
+            <div class="card card-orange ani1" style="width: 380px;" id="ya1">
+                <img src="../assets/img/1.png" class="card-img-top" alt="Calon 1">
                 <div class="card-body">
-                    <h4><b id="jumlah_suara1"></b></h4>
-                    <h3 class="card-title">Shyallom Christian Yosua Putra <br> & <br> Cintya Putri Dzulfianendi</h3>
+                    <h4 class="card-title ketua">Shyallom Christian Y.P</h4>
+                    <h4 class="card-title wakil">Cintya Putri Dzulfianendi</h4>
+                    <h6 class="nomor">Paslon Nomor 1</h6>
                 </div>
-                <img src="../assets/img/calon-1.jpeg" class="card-img-top" alt="Calon 1">
             </div>
+
             <!-- kandidat 2 -->
-            <div class="card" style="width: 380px;">
+            <div class="card card-orange ani2" style="width: 380px;" id="ya2">
+                <img src="../assets/img/2.png" class="card-img-top" alt="Calon 2">
                 <div class="card-body">
-                    <h4><b id="jumlah_suara2"></b></h4>
-                    <h3 class="card-title">Eka Yoansa <br> & <br> Ahmad Wahyu Anafi</h3>
+                    <input type="hidden" name="kandidat_id" value="2">
+                    <h4 class="card-title ketua">Eka Yoansa</h4>
+                    <h4 class="card-title wakil">Ahmad Wahyu Anafi</h4>
+                    <h6 class="nomor">Paslon Nomor 2</h6>
                 </div>
-                <img src="../assets/img/calon-2.jpeg" class="card-img-top" alt="Calon 2">
             </div>
         </div>
     </div>
@@ -124,9 +130,6 @@ if ($result) {
         // Panggil fungsi untuk pertama kali saat halaman dimuat
         $(document).ready(function () {
             updateVotes();
-
-            // Tampilankan tombol logout saat halaman dimuat
-            updateLogoutButtonVisibility();
         });
     </script>
 </body>

@@ -20,22 +20,3 @@ function toggleFullscreen() {
 // Event listener untuk tombol fullscreen
 fullscreenBtn.addEventListener("click", toggleFullscreen);
 
-// Fungsi untuk mengupdate visibilitas logout button
-function updateLogoutButtonVisibility() {
-  if (document.fullscreenElement) {
-    logoutBtn.style.display = "none"; // Sembunyikan tombol logout
-  } else {
-    logoutBtn.style.display = "block"; // Tampilkan tombol logout
-  }
-}
-
-// Perubahan status fullscreen
-document.addEventListener("fullscreenchange", updateLogoutButtonVisibility);
-document.addEventListener(
-  "webkitfullscreenchange",
-  updateLogoutButtonVisibility
-); // Untuk Safari
-document.addEventListener("mozfullscreenchange", updateLogoutButtonVisibility); // Untuk Firefox
-document.addEventListener("MSFullscreenChange", updateLogoutButtonVisibility); // Untuk IE/Edge
-
-

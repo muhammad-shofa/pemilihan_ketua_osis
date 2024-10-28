@@ -31,20 +31,24 @@ if (isset($_POST['logoutBtn'])) {
     <button id="fullscreenBtn" title="Fullscreen">
         <i class="fas fa-expand"></i>
     </button>
+    <img src="../assets/img/book.png" alt="Book" class="book">
+    <img src="../assets/img/toga.png" alt="Book" class="toga">
+    <!-- <img src="../assets/img/penggaris.png" alt="Book" class="penggaris"> -->
     <div class="container-xl py-2 px-2 text-center">
         <!-- <php include "navbar.php" ?> -->
 
-        <h2 class="">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
+        <h2 class="judul">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
         <div class="d-flex flex-wrap justify-content-evenly">
             <!-- kandidat 1 -->
             <form action="" method="POST" id="kandidat1">
-                <div class="card card-orange" style="width: 380px;" id="ya1">
-                    <img src="../assets/img/calon-1-new.jpeg" class="card-img-top" alt="Calon 1">
+                <div class="card card-orange ani1" style="width: 380px;" id="ya1">
+                    <img src="../assets/img/1.png" class="card-img-top" alt="Calon 1">
                     <div class="card-body">
                         <input type="hidden" name="kandidat_id" value="1">
-                        <h4 class="card-title">Shyallom Christian Yosua Putra <br> & <br> Cintya Putri Dzulfianendi</h4>
-                        <h6>Paslon Nomor 1</h6>
-                        <button type="button" class="btn btn-success" name="btnPilih1dump">
+                        <h4 class="card-title ketua">Shyallom Christian Y.P</h4>
+                        <h4 class="card-title wakil">Cintya Putri Dzulfianendi</h4>
+                        <h6 class="nomor">Paslon Nomor 1</h6>
+                        <button type="button" class="btn btn-custom">
                             Pilih Paslon
                         </button>
                     </div>
@@ -52,13 +56,14 @@ if (isset($_POST['logoutBtn'])) {
             </form>
             <!-- kandidat 2 -->
             <form action="" method="POST" id="kandidat2">
-                <div class="card card-orange" style="width: 380px;" id="ya2">
-                    <img src="../assets/img/calon-2-new.jpeg" class="card-img-top" alt="Calon 2">
+                <div class="card card-orange ani2" style="width: 380px;" id="ya2">
+                    <img src="../assets/img/2.png" class="card-img-top" alt="Calon 2">
                     <div class="card-body">
                         <input type="hidden" name="kandidat_id" value="2">
-                        <h4 class="card-title">Eka Yoansa <br> & <br> Ahmad Wahyu Anafi</h4>
-                        <h6>Paslon Nomor 2</h6>
-                        <button type="button" class="btn btn-success" name="btnPilih2dump">
+                        <h4 class="card-title ketua">Eka Yoansa</h4>
+                        <h4 class="card-title wakil">Ahmad Wahyu Anafi</h4>
+                        <h6 class="nomor">Paslon Nomor 2</h6>
+                        <button type="button" class="btn btn-custom">
                             Pilih Paslon
                         </button>
                     </div>
@@ -105,6 +110,7 @@ if (isset($_POST['logoutBtn'])) {
     <!-- jQuery -->
     <script src="../assets/jquery/jquery.js"></script>
     <script src="../assets/jquery/jquery.min.js"></script>
+    <script src="../assets/js/main.js"></script>
 
     <script>
 
@@ -183,25 +189,6 @@ if (isset($_POST['logoutBtn'])) {
             }, 1000);
         });
 
-        // FS
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        // const logoutBtn = document.getElementById('logoutBtn');
-
-        // Fungsi untuk masuk/keluar mode fullscreen
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(err => {
-                    console.error(`Error trying to enable fullscreen mode: ${err.message} (${err.name})`);
-                });
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                }
-            }
-        }
-
-        // Event listener untuk tombol fullscreen
-        fullscreenBtn.addEventListener('click', toggleFullscreen);
 
     </script>
 </body>
