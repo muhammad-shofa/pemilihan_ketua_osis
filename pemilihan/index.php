@@ -143,6 +143,9 @@ if (isset($_POST['logoutBtn'])) {
                 </div>
             </div>
 
+            <!-- Elemen audio untuk suara -->
+            <audio id="clickSound" src="../assets/cashier.mp3"></audio>
+
         </div>
     </div>
     <!-- bootstrap js -->
@@ -152,8 +155,12 @@ if (isset($_POST['logoutBtn'])) {
     <script src="../assets/jquery/jquery.min.js"></script>
 
     <script>
+
+
         // Insert Pilihan Kandidat 1
         $('#ya1').click(function () {
+            let pilihSound = document.getElementById("clickSound");
+            pilihSound.play();
             // $('#modalKonfirmasi1').modal('hide');
             $('#modalCountdown').modal('show');
 
@@ -190,6 +197,8 @@ if (isset($_POST['logoutBtn'])) {
 
         // Insert Pilihan Kandidat 2
         $('#ya2').click(function () {
+            let pilihSound = document.getElementById("clickSound");
+            pilihSound.play();
             // $('#modalKonfirmasi2').modal('hide');
             $('#modalCountdown').modal('show');
 
@@ -241,24 +250,6 @@ if (isset($_POST['logoutBtn'])) {
 
         // Event listener untuk tombol fullscreen
         fullscreenBtn.addEventListener('click', toggleFullscreen);
-
-        // Fungsi untuk mengupdate visibilitas logout button
-        // function updateLogoutButtonVisibility() {
-        //     if (document.fullscreenElement) {
-        //         logoutBtn.style.display = 'none'; // Sembunyikan tombol logout
-        //     } else {
-        //         logoutBtn.style.display = 'block'; // Tampilkan tombol logout
-        //     }
-        // }
-
-        // // Perubahan status fullscreen
-        // document.addEventListener('fullscreenchange', updateLogoutButtonVisibility);
-        // document.addEventListener('webkitfullscreenchange', updateLogoutButtonVisibility); // Untuk Safari
-        // document.addEventListener('mozfullscreenchange', updateLogoutButtonVisibility); // Untuk Firefox
-        // document.addEventListener('MSFullscreenChange', updateLogoutButtonVisibility); // Untuk IE/Edge
-
-        // // Tampilankan tombol logout saat halaman dimuat
-        // updateLogoutButtonVisibility();
 
     </script>
 </body>
