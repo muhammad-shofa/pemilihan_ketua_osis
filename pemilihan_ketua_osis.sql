@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 22, 2024 at 10:56 AM
+-- Generation Time: Oct 28, 2024 at 06:49 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -59,19 +59,6 @@ CREATE TABLE `votes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `votes`
---
-
-INSERT INTO `votes` (`vote_id`, `user_id`, `kandidat_id`, `waktu_vote`) VALUES
-(107, 1, 2, '2024-10-22 10:51:43'),
-(108, 1, 1, '2024-10-22 10:51:59'),
-(109, 1, 1, '2024-10-22 10:52:27'),
-(110, 1, 1, '2024-10-22 10:53:07'),
-(111, 1, 1, '2024-10-22 10:53:32'),
-(112, 1, 1, '2024-10-22 10:54:20'),
-(113, 1, 2, '2024-10-22 10:55:03');
-
---
 -- Indexes for dumped tables
 --
 
@@ -101,7 +88,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `vote_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `vote_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
