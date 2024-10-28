@@ -14,26 +14,28 @@ if (isset($_POST['logoutBtn'])) {
     header('location: ../index.php');
 }
 
-// Ambil jumlah suara untuk kandidat
-// $query = "SELECT kandidat_id, COUNT(*) as jumlah FROM votes GROUP BY kandidat_id";
-// $result = $connected->query($query);
 
-// $kandidat_votes = [
-//     1 => 0,
-//     2 => 0
-// ];
+// Ambil jumlah semua votes
+$query = "SELECT COUNT(*) as total_votes FROM votes";
+$result = $connected->query($query);
+$value_semua_votes = "";
+$value_persentase_votes = "";
 
-// while ($row = $result->fetch_assoc()) {
-//     $kandidat_votes[$row['kandidat_id']] = $row['jumlah'];
-// }
+if ($result) {
+    $data = $result->fetch_assoc();
+    $total_votes = $data['total_votes'];
 
-// // Hitung total suara
-// $total_votes = $kandidat_votes[1] + $kandidat_votes[2];
+    // Jumlah total target (misal, 1000 siswa)
+    $target_votes = 1714;
 
-// // Hitung persentase
-// $persentase_kandidat_1 = $total_votes > 0 ? ($kandidat_votes[1] / $total_votes) * 100 : 0;
-// $persentase_kandidat_2 = $total_votes > 0 ? ($kandidat_votes[2] / $total_votes) * 100 : 0;
+    // Hitung persentase suara yang terkumpul
+    $percentage = ($total_votes / $target_votes) * 100;
 
+    $value_semua_votes = "Jumlah suara yang terkumpul: $total_votes<br>";
+    $value_persentase_votes = "Persentase siswa yang memilih: " . round($percentage, 2) . "%";
+} else {
+    echo "Gagal mengambil data suara.";
+}
 ?>
 
 
@@ -61,6 +63,10 @@ if (isset($_POST['logoutBtn'])) {
             <div class="kandidat2" id="barKandidat2">
                 <span class="kandidat-label label2" id="persentaseKandidat2"></span>
             </div>
+        </div>
+        <div class="jumlah-semua-suara p-2 text-center">
+            <?= $value_semua_votes ?>
+            <?= $value_persentase_votes ?>
         </div>
 
         <div class="d-flex flex-wrap justify-content-evenly py-3">

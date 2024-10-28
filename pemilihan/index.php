@@ -65,54 +65,6 @@ if (isset($_POST['logoutBtn'])) {
                 </div>
             </form>
 
-            <!-- Modal Konfirmasi 1 Start -->
-            <!-- <div class="modal fade" id="modalKonfirmasi1" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <form action="" id="formKonfirmasi1">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5">Konfirmasi Pilihan</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" name="kandidat_id" value="1">
-                                <p>Kamu yakin ingin memilih calon Nomor 1?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <button type="button" id="ya1" class="btn btn-primary">Ya</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Modal Konfirmasi 1 End -->
-
-            <!-- Modal Konfirmasi 2 Start -->
-            <!-- <div class="modal fade" id="modalKonfirmasi2" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <form action="" id="formKonfirmasi2">
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5">Konfirmasi Pilihan</h1>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <input type="hidden" name="kandidat_id" value="2">
-                                <p>Kamu yakin ingin memilih calon Nomor 2?</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                <button type="button" id="ya2" class="btn btn-primary">Ya</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Modal Konfirmasi 2 End -->
-
             <!-- Modal countdown -->
             <div class="modal" id="modalCountdown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 role="dialog">
