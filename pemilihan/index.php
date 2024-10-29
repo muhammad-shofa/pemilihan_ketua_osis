@@ -33,9 +33,7 @@ if (isset($_POST['logoutBtn'])) {
     </button>
     <img src="../assets/img/book.png" alt="Book" class="book">
     <img src="../assets/img/toga.png" alt="Book" class="toga">
-    <!-- <img src="../assets/img/penggaris.png" alt="Book" class="penggaris"> -->
     <div class="container-xl py-2 px-2 text-center">
-        <!-- <php include "navbar.php" ?> -->
 
         <h2 class="judul">Pemilihan Ketua dan Wakil ketua Osis <br> SMK Taruna Jaya Prawira Tuban Tahun 2024</h2>
         <div class="d-flex flex-wrap justify-content-evenly">

@@ -16,25 +16,25 @@ if (isset($_POST['logoutBtn'])) {
 
 
 // Ambil jumlah semua votes
-$query = "SELECT COUNT(*) as total_votes FROM votes";
-$result = $connected->query($query);
-$value_semua_votes = "";
-$value_persentase_votes = "";
+// $query = "SELECT COUNT(*) as total_votes FROM votes";
+// $result = $connected->query($query);
+// $value_semua_votes = "";
+// $value_persentase_votes = "";
 
-if ($result) {
-    $data = $result->fetch_assoc();
-    $total_votes = $data['total_votes'];
+// if ($result) {
+//     $data = $result->fetch_assoc();
+//     $total_votes = $data['total_votes'];
 
-    $target_votes = 1714;
+//     $target_votes = 1714;
 
-    // Hitung persentase suara yang terkumpul
-    $percentage = ($total_votes / $target_votes) * 100;
+//     // Hitung persentase suara yang terkumpul
+//     $percentage = ($total_votes / $target_votes) * 100;
 
-    $value_semua_votes = "Jumlah suara yang terkumpul: $total_votes<br>";
-    $value_persentase_votes = "Persentase siswa yang memilih: " . round($percentage, 2) . "%";
-} else {
-    echo "Gagal mengambil data suara.";
-}
+//     $value_semua_votes = "Jumlah suara yang terkumpul: $total_votes<br>";
+//     $value_persentase_votes = "Persentase siswa yang memilih: " . round($percentage, 2) . "%";
+// } else {
+//     echo "Gagal mengambil data suara.";
+// }
 ?>
 
 
@@ -67,8 +67,8 @@ if ($result) {
             </div>
         </div>
         <div class="jumlah-semua-suara p-2 text-center judul-2">
-            <?= $value_semua_votes ?>
-            <?= $value_persentase_votes ?>
+            <p id="value_semua_votes"></p>
+            <p id="value_persentase_votes"></p>
         </div>
 
         <div class="d-flex flex-wrap justify-content-evenly py-3">
@@ -104,6 +104,8 @@ if ($result) {
     <script src="../assets/js/main.js"></script>
 
     <script>
+
+
         function updateVotes() {
             $.ajax({
                 url: '../service/ajax-admin.php',
@@ -114,8 +116,11 @@ if ($result) {
                     $('#persentaseKandidat1').text(data.persentase_kandidat_1.toFixed(2));
                     $('#persentaseKandidat2').text(data.persentase_kandidat_2.toFixed(2));
 
-                    $('#jumlah_suara1').text(data.jumlah_suara1);
-                    $('#jumlah_suara2').text(data.jumlah_suara2);
+                    $('#value_semua_votes').text(data.value_semua_votes);
+                    $('#value_persentase_votes').text(data.value_persentase_votes);
+
+                    // $('#jumlah_suara1').text(data.jumlah_suara1);
+                    // $('#jumlah_suara2').text(data.jumlah_suara2);
 
                     // Update bar width sesuai dengan persentase
                     $('#barKandidat1').css('width', data.persentase_kandidat_1 + '%');
